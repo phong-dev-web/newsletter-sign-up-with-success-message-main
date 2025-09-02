@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: hsl(234, 26%, 37%);
+}
 @font-face {
     font-family: 'roboto-bold';
     src: url(acts/fonts/Roboto-Bold.ttf);
@@ -17,6 +20,7 @@
     height: 100vh;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+    transition: all 0.3s ease;
 }
 .newsletter-image {
     grid-row: 1 / 2;
@@ -70,16 +74,16 @@
     cursor: pointer;
 }
 .newsletter-form button:hover {
-    background: hsl(0, 0%, 100%);
-    color: black;
-    transition: all 0.3s ease;
+    background: linear-gradient(to right, hsl(357, 73%, 54%), hsl(192, 70%, 51%));
+    transition: all 0.5s ease;
 }
 .success {
     display: none;
     height: 100vh;
-    margin: 0 10%;
     grid-template-rows: 20vh 70vh 10vh;
     font-size: 25px;
+    background-color: white;
+    transition: all 0.3s ease;
 } 
 .success-image {
     grid-row: 1 / 2;
@@ -87,10 +91,12 @@
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 80px;
+    margin: 0 10%;
 }
 .success-content {
     grid-row: 2 / 3;
     margin-top: 40px;
+    margin: 0 10%;
 }
 .success-content h1 {
     font-family: 'roboto-bold', sans-serif;
@@ -104,6 +110,7 @@
     font-weight: bold;
 }
 .success button {
+    margin: 0 10%;
     margin-bottom: 20px;
     border: none;
     border-radius: 10px;
@@ -112,4 +119,52 @@
     font-size: 18px;
     font-weight: bold;
     font-family: 'roboto-bold', sans-serif;
+}
+.success button:hover {
+    background: linear-gradient(to right, hsl(357, 73%, 54%), hsl(192, 70%, 51%));
+    transition: all 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .newsletter {
+        display: grid;
+        margin: 5vw auto;
+        margin-bottom: 0;
+        width: 70vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        border-radius: 30px;
+        height: auto;
+        
+    }
+    .newsletter-image {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        background-image: url('assets/images/illustration-sign-up-desktop.svg');
+        margin: 2vw;
+        border-radius: 30px ;
+    }
+    .newsletter-content {
+        grid-column: 1/2;
+        grid-row: 1/3;
+        margin: 5vw;
+    }
+    .success {
+        display: none;
+        width: 30vw;
+        margin: 20vh auto;
+        height: auto;
+        border-radius: 30px;
+        box-shadow: 10px 10px 40px rgba(0,0,0,0.1);
+        grid-template-rows: 1.5fr 2fr 1fr;
+        margin-bottom: 0;
+    }
+    .success-content {
+        font-size: 20px;
+        margin: 20px 10%;
+    }
+    .success button  {
+        height: 50%;
+        margin-top: 20px;
+    }
 }
